@@ -23,7 +23,8 @@
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/688c6a8c3a.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script> -->
     <!-- Nucleo Icons -->
     <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -61,12 +62,12 @@
       <div class="items-center block w-auto max-h-screen overflow-auto h-sidenav grow basis-full">
         <ul class="flex flex-col pl-0 mb-0">
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center  px-4 transition-colors hover:scale-102" href="../pages/liste_persos.html">
-              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors rounded-lg bg-white font-semibold text-slate-700" href="../pages/liste_persos.html">
+              <div class="bg-gradient-to-tl from-gray-900 to-slate-800 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                 <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <title>customer-support</title>
                   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g transform="translate(-1717.000000, -291.000000)" fill="#3a416f" fill-rule="nonzero">
+                    <g transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
                       <g transform="translate(1716.000000, 291.000000)">
                         <g transform="translate(1.000000, 0.000000)">
                           <path class=" opacity-60" d="M45,0 L26,0 C25.447,0 25,0.447 25,1 L25,20 C25,20.379 25.214,20.725 25.553,20.895 C25.694,20.965 25.848,21 26,21 C26.212,21 26.424,20.933 26.6,20.8 L34.333,15 L45,15 C45.553,15 46,14.553 46,14 L46,1 C46,0.447 45.553,0 45,0 Z"></path>
@@ -83,13 +84,32 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center  px-4 transition-colors rounded-lg bg-white font-semibold text-slate-700" href="../pages/infos_joueurs.html">
-              <div class="bg-gradient-to-tl from-gray-900 to-slate-800 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
-                <i class="ni ni-badge text-white" aria-hidden="true"></i>
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center  px-4 transition-colors hover:scale-102" href="../pages/infos_joueurs.html">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                <i class="ni ni-badge" aria-hidden="true"></i>
               </div>
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Mes informations</span>
             </a>
           </li>
+            
+          <li class="mt-0.5 w-full">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center  px-4 transition-colors hover:scale-102" href="../pages/billet_perso.html">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                <i class="ni ni-paper-diploma" aria-hidden="true"></i>
+              </div>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Ma fiche personnage</span>
+            </a>
+          </li>
+
+          <li class="mt-0.5 w-full">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center  px-4 transition-colors hover:scale-102" href="#">
+              <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
+                <i class="ni ni-email-83" aria-hidden="true"></i>
+              </div>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Contacter mon orga</span>
+            </a>
+          </li>
+
         </ul>
       </div>
     </aside>
@@ -273,10 +293,10 @@
                         <td class="p-2 align-middle bg-transparent  shadow-transparent text-pretty">
                           <div class="flex px-2 py-1">
                             <div class="flex flex-col justify-center">
-                              <p class="text-sm leading-normal"><span class="font-extrabold underline text-slate-700">Ferrailleur</span> : lors de votre fouille sur un joueur ou pnj en agonie, vous pouvez récupérer une partie des matériaux de ses armes et boucliers. Ces matériaux sont indiqués et représentés sous la forme d'un ou plusieurs coupons. 
+                              <p class="text-sm leading-normal"><span class="font-extrabold underline text-slate-700">Bidouilleur</span> : vous pouvez réparer, améliorer et fabriquer des objets électriques basiques. Vous pouvez fabriquer des systèmes électriques simples à partir de scraps électriques. Compétence nécessaire pour réparer des objets à composante électrique en jeu (composants à voir en jeu et liste fournie). Prévoir un petit tournevis plat.   
 
                                 <br/>
-                                Coût : <span class="font-extrabold">5PA</span> - <span class="italic">"Hey mais c'est du bon acier ça !"</span> 
+                                Coût : <span class="font-extrabold">4PA</span> - <span class="italic">"Qu’est ce qui se passe si je coupe le fil rouge ?"</span> 
                               </p>
                             </div>
                           </div>
@@ -294,6 +314,50 @@
                         <td class="mx-8 text-center shadow-transparent" colspan="2">
                           <div class="flex p-3 mt-3 text-center justify-center bg-slate-100 bg-opacity-40  border rounded border-dashed border-slate-300">
                             <span class="text-xs font-semibold leading-tight text-slate-300 cursor-pointer hover:scale-102 hover:text-slate-700 hover:underline"><strong class="font-extrabold">+ </strong>Ajouter une compétence (17 PA disponibles)</span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Compétences spéciales-->
+          <div class="flex-none w-full max-w-full px-3  mb-6">
+            <div class="relative flex flex-col min-w-0 pb-2 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
+              <div class="flex flex-wrap mx-3 my-3">
+                <div class="flex-none w-auto max-w-full px-3 my-auto">
+                  <div class="h-full">
+                    <h5 class="mb-1">Capacités spéciales <a href="#" id="info" data-target="tooltip_trigger" data-placement="top"><i class="fa fa-question-circle hover:text-slate-700 text-sm" aria-hidden="true"></i></a> 
+                      <div data-target="tooltip" class="hidden px-2 py-1 text-center text-white bg-slate-700 rounded-lg text-sm" role="tooltip">
+                        Ces compétences sont renseignées et gérées par les orgas
+                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
+                      </div></h5>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-auto px-0 pt-0 pb-2">
+                <div class="p-0 mx-5">
+                  <table class="items-center w-full table-fixed border-separate border-spacing-2 mb-0 align-top border-gray-200 text-slate-500">
+                    <tbody>
+                      <tr>
+                        <td class="p-2 align-middle bg-transparent border-b  shadow-transparent text-pretty">
+                          <div class="flex px-2 py-1">
+                            <div class="flex flex-col justify-center">
+                              <p class="text-sm leading-normal"><span class="font-extrabold underline text-slate-700">Adapté aux radiations</span> : vous pouvez accumuler plus de radiations que les autres factions avec moins d'effets néfastes.<br/>
+                              </p>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="mb-5">
+                        <td class="p-2 align-middle bg-transparent  shadow-transparent text-pretty">
+                          <div class="flex px-2 py-1">
+                            <div class="flex flex-col justify-center">
+                              <p class="text-sm leading-normal"><span class="font-extrabold underline text-slate-700">Pouvoir Grand Radium : Unijambiste</span> : lorsque vous croisez les doigts vous devenez unijambiste et champion au jeu de la Marelle.
+                              </p>
+                            </div>
                           </div>
                         </td>
                       </tr>
@@ -337,7 +401,7 @@
                       <tr>
                         <td class="p-2 align-middle bg-transparent shadow-transparent text-pretty">
                           <div class="flex px-2 py-1">
-                            <div class="flex flex-col justify-center">
+                            <div class="flex flex-col justify-center pl-6">
                               <p class="text-sm leading-normal"><span class="font-extrabold underline text-slate-700">Arme de Classe 2</span> : vous avez une arme qui offre la possibilité de tirer plusieurs munitions à la suite ou en même temps que ce soit à l’aide d’un autre canon ou via un chargeur statique, rotatif, ou autre joyeuse invention permettant d’enchaîner les tirs sans faire de pause pour recharger l’arme.<br/>
                                 Coût : <span class="font-extrabold">4PA</span> <span class="italic">(arme seule, pas de munition) - "Y a plein de choses intéressantes dans le monde, comme mon Colt 45. Je l'aime bien mon Colt."</span> 
                               </p>
@@ -360,9 +424,9 @@
                         <td class="w-20"></td>
                       </tr>
                       <tr>
-                        <td class="p-2 align-middle bg-transparent border-b  shadow-transparent text-pretty">
+                        <td class="p-2 align-middle bg-transparent shadow-transparent text-pretty">
                           <div class="flex px-2 py-1">
-                            <div class="flex flex-col justify-center">
+                            <div class="flex flex-col justify-center  pl-6 border-b">
                               <p class="text-sm leading-normal"><span class="font-extrabold underline text-slate-700">Gemme du DAWN</span> : les gemmes du DAWN sont devenues les seules sources d’énergies viables, tout objet nécessitant de l'électricité en a besoin pour assurer son fonctionnement.<br/>
                                 Coût : <span class="font-extrabold">2PA</span> -  <span class="italic">"Incarnation du Dieu élec, prêtez-nous votre lumière !"</span> 
                               </p>
@@ -381,7 +445,7 @@
                       <tr class="mb-5">
                         <td class="p-2 align-middle bg-transparent  shadow-transparent text-pretty">
                           <div class="flex px-2 py-1">
-                            <div class="flex flex-col justify-center">
+                            <div class="flex flex-col justify-center pl-6">
                               <p class="text-sm leading-normal"><span class="font-extrabold underline text-slate-700">Med-kit</span> : permet de diviser par deux les temps de soin. Peut servir 2 fois. 
 
                                 <br/>

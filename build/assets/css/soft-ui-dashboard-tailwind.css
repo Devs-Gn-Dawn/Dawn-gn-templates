@@ -2880,6 +2880,11 @@ h6 {
   color: rgb(52 71 103 / var(--tw-text-opacity));
 }
 
+.text-slate-800 {
+  --tw-text-opacity: 1;
+  color: rgb(58 65 111 / var(--tw-text-opacity));
+}
+
 .text-transparent {
   color: transparent;
 }
