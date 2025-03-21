@@ -22,3 +22,36 @@ Svg, dans le path enlever les class : fill-slate-800
               <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Mes personnages</span>
             </a>
           </li>
+
+#######
+
+Commande pour le build :
+npx tailwindcss build -i src/styles.css -o build/assets/css/soft-ui-dashboard-tailwind.css
+
+############
+Fiche PJ
+
+
+Logo dawn
+
+Nom du joueur
+Nom du personnage
+Faction 
+Classe
+Groupe / Clan 
+
+Points de vie
+Points d'armure
+
+Compétences
+Capacités spéciales
+Matériel et ressources
+Mes possessions
+
+tableau de corruption
+
+Validation orga
+
+Check quotidien : Nourriture / Eau / libre
+
+Qrcode + numéro de billet
