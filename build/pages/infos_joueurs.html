@@ -99,7 +99,7 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center  px-4 transition-colors hover:scale-102" href="#">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center  px-4 transition-colors hover:scale-102" href="javascript:openContactOrgaModal()">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                 <i class="ni ni-email-83" aria-hidden="true"></i>
               </div>
@@ -166,7 +166,7 @@
           <div class="flex flex-wrap -mx-3">
             <div class="flex-none w-auto max-w-full px-3">
               <div class="text-base ease-soft-in-out h-18.5 w-18.5 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200">
-                <img src="../assets/img/bruce-mars.jpg" alt="profile_image" class="w-full shadow-soft-sm rounded-xl" />
+                <img src="../assets/img/avatars/avatar_nomads.jpg" alt="profile_image" class="w-full shadow-soft-sm rounded-xl" />
               </div>
             </div>
             <div class="flex-none w-auto max-w-full px-3 my-auto">
@@ -220,7 +220,7 @@
                   </li>
                   <li class="relative flex items-center px-0 py-2 bg-white border-0 rounded-t-lg text-inherit">
                     <div class="w-full mx-2 p-1 text-center justify-center bg-slate-100 bg-opacity-40  border rounded border-dashed border-slate-300">
-                      <span class="text-xs font-semibold leading-tight text-slate-300 cursor-pointer hover:scale-102 hover:text-slate-700 hover:underline"><strong class="font-extrabold">+ </strong>Ajouter un contact</span>
+                      <span class="text-xs font-semibold leading-tight text-slate-300 cursor-pointer hover:scale-102 hover:text-slate-700 hover:underline"><a href="javascript:openContactModal();"><strong class="font-extrabold">+ </strong>Ajouter un contact</a></span>
                     </div>
                   </li>
                 </ul>
@@ -249,7 +249,7 @@
                   </li>
                   <li class="relative flex items-center px-0 py-2 bg-white border-0 rounded-t-lg text-inherit">
                     <div class="w-full mx-2 p-1 text-center justify-center bg-slate-100 bg-opacity-40  border rounded border-dashed border-slate-300">
-                      <span class="text-xs font-semibold leading-tight text-slate-300 cursor-pointer hover:scale-102 hover:text-slate-700 hover:underline"><strong class="font-extrabold">+ </strong>Ajouter une allergie</span>
+                      <span class="text-xs font-semibold leading-tight text-slate-300 cursor-pointer hover:scale-102 hover:text-slate-700 hover:underline"><strong class="font-extrabold"><a href="javascript:openAllergyModal()">+ </strong>Ajouter une allergie</a></span>
                     </div>
                   </li>
                 </ul>
@@ -346,7 +346,7 @@
                   </li>
                   <li class="relative flex items-center px-0 py-2 bg-white border-0 rounded-t-lg text-inherit">
                     <div class="w-full mx-2 p-1 text-center justify-center bg-slate-100 bg-opacity-40  border rounded border-dashed border-slate-300">
-                      <span class="text-xs font-semibold leading-tight text-slate-300 cursor-pointer hover:scale-102 hover:text-slate-700 hover:underline"><strong class="font-extrabold">+ </strong>Ajouter un commentaire</span>
+                      <span class="text-xs font-semibold leading-tight text-slate-300 cursor-pointer hover:scale-102 hover:text-slate-700 hover:underline"><a href="javascript:openCommentModal()"><strong class="font-extrabold">+ </strong>Ajouter un commentaire</a></span>
                     </div>
                   </li>
                 </ul>
@@ -491,9 +491,105 @@ function sweetTicket(){
         imageWidth: "100%",
         // imageHeight: 261,
         confirmButtonText: "J'ai compris !",
+        cancelButtonText: 'Annuler', 
         animation: false
     });
 }
 
-  </script>
+function openContactModal(){
+  Swal.fire({
+    title: 'Ajouter un contact',
+    html: `
+        <div class="mb-4">
+            <input type="text" id="name" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-800 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-800 focus:outline-none focus:transition-shadow" placeholder="Nom du contact" required>
+        </div>
+         <div class="mb-4">
+            <input type="text" id="tel" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-800 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-800 focus:outline-none focus:transition-shadow" placeholder="Numéro de téléphone" required>
+        </div>
+    `,
+    showCancelButton: true,
+    confirmButtonText: 'Ajouter',
+    cancelButtonText: 'Annuler',
+    customClass: {
+        // popup: "!relative !transform !overflow-hidden !rounded-lg !bg-white !text-left !shadow-xl !transition-all sm:!my-8 sm:!w-full sm:!max-w-lg !p-0 !grid-cols-none",
+        text: "!mt-2 sm:!mt-0 !m-0 !text-center sm:!text-left !text-s !text-gray-500 !pl-4 sm:!pl-0 !pr-4 !pb-4 sm:!pr-6 sm:!pb-4 sm:!ml-4 !col-start-1 sm:!col-start-2 !col-end-3",
+        confirmButton: "border-0 inline-flex w-full justify-center rounded-md bg-gradient-to-tl from-gray-900 to-slate-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:scale-102 hover:bg-slate-800 sm:ml-3 sm:w-auto",
+        cancelButton: "border border-solid inline-flex w-full justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:scale-102 hover:bg-slate-600 hover:text-white sm:ml-3 sm:w-auto",
+    },    
+      // width:"50%",
+
+    });
+}
+
+function openAllergyModal(){
+  Swal.fire({
+    title: 'Ajouter une allergie',
+    html: `
+        <div class="mb-4">
+            <input type="text" id="allergy-name" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-800 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-800 focus:outline-none focus:transition-shadow" placeholder="Nom de l'allergie" required>
+        </div>
+    `,
+    showCancelButton: true,
+    confirmButtonText: 'Ajouter',
+    cancelButtonText: 'Annuler',
+    customClass: {
+        // popup: "!relative !transform !overflow-hidden !rounded-lg !bg-white !text-left !shadow-xl !transition-all sm:!my-8 sm:!w-full sm:!max-w-lg !p-0 !grid-cols-none",
+        text: "!mt-2 sm:!mt-0 !m-0 !text-center sm:!text-left !text-s !text-gray-500 !pl-4 sm:!pl-0 !pr-4 !pb-4 sm:!pr-6 sm:!pb-4 sm:!ml-4 !col-start-1 sm:!col-start-2 !col-end-3",
+        confirmButton: "border-0 inline-flex w-full justify-center rounded-md bg-gradient-to-tl from-gray-900 to-slate-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:scale-102 hover:bg-slate-800 sm:ml-3 sm:w-auto",
+        cancelButton: "border border-solid inline-flex w-full justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:scale-102 hover:bg-slate-600 hover:text-white sm:ml-3 sm:w-auto",
+    },    
+      // width:"50%",
+
+    });
+}
+function openCommentModal(){
+  Swal.fire({
+    title: 'Ajouter une note',
+    html: `
+        <div class="mb-6">
+            <input type="text" id="note-title" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-800 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-800 focus:outline-none focus:transition-shadow" placeholder="Titre de la note" required>
+        </div>
+        <div class="mb-6">
+          <textarea id="note-content" rows="5" cols="20" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-800 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-800 focus:outline-none focus:transition-shadow" placeholder="Contenu de la note" required></textarea>
+        </div>
+    `,
+    showCancelButton: true,
+    confirmButtonText: 'Ajouter',
+    cancelButtonText: 'Annuler',
+    customClass: {
+        // popup: "!relative !transform !overflow-hidden !rounded-lg !bg-white !text-left !shadow-xl !transition-all sm:!my-8 sm:!w-full sm:!max-w-lg !p-0 !grid-cols-none",
+        text: "!mt-2 sm:!mt-0 !m-0 !text-center sm:!text-left !text-s !text-gray-500 !pl-4 sm:!pl-0 !pr-4 !pb-4 sm:!pr-6 sm:!pb-4 sm:!ml-4 !col-start-1 sm:!col-start-2 !col-end-3",
+        confirmButton: "border-0 inline-flex w-full justify-center rounded-md bg-gradient-to-tl from-gray-900 to-slate-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:scale-102 hover:bg-slate-800 sm:ml-3 sm:w-auto",
+        cancelButton: "border border-solid inline-flex w-full justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:scale-102 hover:bg-slate-600 hover:text-white sm:ml-3 sm:w-auto",
+    },    
+    //  width:"50%",
+
+    });
+}
+
+function openContactOrgaModal(){
+  Swal.fire({
+    title: 'Contacter mon orga',
+    html: `
+        <div class="mb-6">
+            <input type="text" id="note-title" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-800 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-800 focus:outline-none focus:transition-shadow" placeholder="Objet" required>
+        </div>
+        <div class="mb-6">
+          <textarea id="note-content" rows="5" cols="20" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-800 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-800 focus:outline-none focus:transition-shadow" placeholder="Coucou" required></textarea>
+        </div>
+    `,
+    showCancelButton: true,
+    confirmButtonText: 'Envoyer',
+    cancelButtonText: 'Annuler',
+    customClass: {
+        // popup: "!relative !transform !overflow-hidden !rounded-lg !bg-white !text-left !shadow-xl !transition-all sm:!my-8 sm:!w-full sm:!max-w-lg !p-0 !grid-cols-none",
+        text: "!mt-2 sm:!mt-0 !m-0 !text-center sm:!text-left !text-s !text-gray-500 !pl-4 sm:!pl-0 !pr-4 !pb-4 sm:!pr-6 sm:!pb-4 sm:!ml-4 !col-start-1 sm:!col-start-2 !col-end-3",
+        confirmButton: "border-0 inline-flex w-full justify-center rounded-md bg-gradient-to-tl from-gray-900 to-slate-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:scale-102 hover:bg-slate-800 sm:ml-3 sm:w-auto",
+        cancelButton: "border border-solid inline-flex w-full justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:scale-102 hover:bg-slate-600 hover:text-white sm:ml-3 sm:w-auto",
+    },    
+    //  width:"50%",
+
+    });
+}
+</script>
 </html>

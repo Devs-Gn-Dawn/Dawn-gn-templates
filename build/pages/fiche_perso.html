@@ -102,7 +102,7 @@
           </li>
 
           <li class="mt-0.5 w-full">
-            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center  px-4 transition-colors hover:scale-102" href="#">
+            <a class="py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center  px-4 transition-colors hover:scale-102" href="javascript:openContactOrgaModal()">
               <div class="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5">
                 <i class="ni ni-email-83" aria-hidden="true"></i>
               </div>
@@ -172,7 +172,7 @@
           <div class="flex flex-wrap -mx-3">
             <div class="flex-none w-auto max-w-full px-3">
               <div class="text-base ease-soft-in-out h-18.5 w-18.5 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200">
-                <img src="../assets/img/bruce-mars.jpg" alt="profile_image" class="w-full shadow-soft-sm rounded-xl" />
+                <img src="../assets/img/avatars/avatar_nomads.jpg" alt="profile_image" class="w-full shadow-soft-sm rounded-xl" />
               </div>
             </div>
             <div class="flex-none w-auto max-w-full my-auto">
@@ -313,7 +313,7 @@
                       <tr>
                         <td class="mx-8 text-center shadow-transparent" colspan="2">
                           <div class="flex p-3 mt-3 text-center justify-center bg-slate-100 bg-opacity-40  border rounded border-dashed border-slate-300">
-                            <span class="text-xs font-semibold leading-tight text-slate-300 cursor-pointer hover:scale-102 hover:text-slate-700 hover:underline"><strong class="font-extrabold">+ </strong>Ajouter une compétence (17 PA disponibles)</span>
+                            <span class="text-xs font-semibold leading-tight text-slate-300 cursor-pointer hover:scale-102 hover:text-slate-700 hover:underline"><a href="javascript:openCompetenceModal()"><strong class="font-extrabold">+ </strong>Ajouter une compétence (17 PA disponibles)</a></span>
                           </div>
                         </td>
                       </tr>
@@ -466,7 +466,7 @@
                       <tr>
                         <td class="mx-8 text-center shadow-transparent" colspan="2">
                           <div class="flex p-3 mt-3 text-center justify-center bg-slate-100 bg-opacity-40  border rounded border-dashed border-slate-300">
-                            <span class="text-xs font-semibold leading-tight text-slate-300 cursor-pointer hover:scale-102 hover:text-slate-700 hover:underline"><strong class="font-extrabold">+ </strong>Ajouter du matériel ou une ressource (1 PA disponibles)</span>
+                            <span class="text-xs font-semibold leading-tight text-slate-300 cursor-pointer hover:scale-102 hover:text-slate-700 hover:underline"><a href="javascript:openMatosModal()"><strong class="font-extrabold">+ </strong>Ajouter du matériel ou une ressource (1 PA disponibles)</a></span>
                           </div>
                         </td>
                       </tr>
@@ -732,5 +732,100 @@ function sweetTicket(){
 const quill = new Quill('#editor', {
     theme: 'snow'
   });
+
+  
+  function openContactOrgaModal(){
+    Swal.fire({
+      title: 'Contacter mon orga',
+      html: `
+          <div class="mb-6">
+              <input type="text" id="note-title" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-800 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-800 focus:outline-none focus:transition-shadow" placeholder="Objet" required>
+          </div>
+          <div class="mb-6">
+            <textarea id="note-content" rows="5" cols="20" class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-800 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-800 focus:outline-none focus:transition-shadow" placeholder="Coucou" required></textarea>
+          </div>
+      `,
+      showCancelButton: true,
+      confirmButtonText: 'Envoyer',
+      cancelButtonText: 'Annuler',
+      customClass: {
+          // popup: "!relative !transform !overflow-hidden !rounded-lg !bg-white !text-left !shadow-xl !transition-all sm:!my-8 sm:!w-full sm:!max-w-lg !p-0 !grid-cols-none",
+          text: "!mt-2 sm:!mt-0 !m-0 !text-center sm:!text-left !text-s !text-gray-500 !pl-4 sm:!pl-0 !pr-4 !pb-4 sm:!pr-6 sm:!pb-4 sm:!ml-4 !col-start-1 sm:!col-start-2 !col-end-3",
+          confirmButton: "border-0 inline-flex w-full justify-center rounded-md bg-gradient-to-tl from-gray-900 to-slate-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:scale-102 hover:bg-slate-800 sm:ml-3 sm:w-auto",
+          cancelButton: "border border-solid inline-flex w-full justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:scale-102 hover:bg-slate-600 hover:text-white sm:ml-3 sm:w-auto",
+      },    
+      //  width:"50%",
+  
+      });
+  }
+  
+  function openCompetenceModal(){
+    Swal.fire({
+      title: 'Ajouter une compétence',
+      html: `
+          <div class="mb-6">             
+            <select name="competences" id="competence name" class="border border-solid w-full justify-center rounded-md shadow-sm p-2">
+              <option value="">-- Sélectionnez une compétence --</option>
+              <option value="comp1">Calcification excessive - 6PA</option>
+              <option value="comp2">Désosseur - 4PA</option>
+              <option value="comp3" selected>Premiers secours - 3PA</option>
+            </select>
+          </div>
+
+          <div class="mb-6 text-left">
+            <p class="text-sm leading-normal">
+              <strong class="font-extrabold text-slate-700">Premiers secours :</strong> permet de stabiliser une personne et la fait sortir de son état d’agonie, ajoute 1pv (scène de jeu courte : 5 minutes). Il vous est nécessaire d’avoir une trousse  de premiers secours et de poser un bandage sur le ou la patient.e pour que le soin soit effectif.<br/> 
+              Coût : <strong class="font-extrabold text-red-700">3PA</strong> - "<span class="italic">Avant tu avais une hémorragie, mais ça c’était avant.</span>"
+            </p>
+          </div>
+      `,
+      showCancelButton: true,
+      confirmButtonText: 'Valider',
+      cancelButtonText: 'Annuler',
+      customClass: {
+          // popup: "!relative !transform !overflow-hidden !rounded-lg !bg-white !text-left !shadow-xl !transition-all sm:!my-8 sm:!w-full sm:!max-w-lg !p-0 !grid-cols-none",
+          text: "!mt-2 sm:!mt-0 !m-0 !text-center sm:!text-left !text-s !text-gray-500 !pl-4 sm:!pl-0 !pr-4 !pb-4 sm:!pr-6 sm:!pb-4 sm:!ml-4 !col-start-1 sm:!col-start-2 !col-end-3",
+          confirmButton: "border-0 inline-flex w-full justify-center rounded-md bg-gradient-to-tl from-gray-900 to-slate-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:scale-102 hover:bg-slate-800 sm:ml-3 sm:w-auto",
+          cancelButton: "border border-solid inline-flex w-full justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:scale-102 hover:bg-slate-600 hover:text-white sm:ml-3 sm:w-auto",
+      },    
+      width:"70%",
+  
+      });
+  }
+
+  function openMatosModal(){
+    Swal.fire({
+      title: 'Ajouter du matériel ou une ressource',
+      html: `
+          <div class="mb-6">             
+            <select name="competences" id="competence name" class="border border-solid w-full justify-center rounded-md shadow-sm p-2">
+              <option value="">-- Choix du matériel ou d'une ressource --</option>
+              <option value="matos1">Gemme du DAWN - 2PA</option>
+              <option value="matos2">LSD - 3PA</option>
+              <option value="matos3" selected>Arme de corps à corps Classe 3 - 5PA</option>
+            </select>
+          </div>
+
+          <div class="mb-6 text-left">
+            <p class="text-sm leading-normal">
+              <strong class="font-extrabold text-slate-700">Arme de corps à corps Classe 3 :</strong> vous avez une arme de taille supérieure à 110 cm<br/> 
+              Coût : <strong class="font-extrabold text-red-700">5PA</strong> - "<span class="italic">Avoir une lance ou un gros taptap, c'est cool, comme ça tu sais ce que tu fais avec tes deux mains !</span>"
+            </p>
+          </div>
+      `,
+      showCancelButton: true,
+      confirmButtonText: 'Valider',
+      cancelButtonText: 'Annuler',
+      customClass: {
+          // popup: "!relative !transform !overflow-hidden !rounded-lg !bg-white !text-left !shadow-xl !transition-all sm:!my-8 sm:!w-full sm:!max-w-lg !p-0 !grid-cols-none",
+          text: "!mt-2 sm:!mt-0 !m-0 !text-center sm:!text-left !text-s !text-gray-500 !pl-4 sm:!pl-0 !pr-4 !pb-4 sm:!pr-6 sm:!pb-4 sm:!ml-4 !col-start-1 sm:!col-start-2 !col-end-3",
+          confirmButton: "border-0 inline-flex w-full justify-center rounded-md bg-gradient-to-tl from-gray-900 to-slate-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:scale-102 hover:bg-slate-800 sm:ml-3 sm:w-auto",
+          cancelButton: "border border-solid inline-flex w-full justify-center rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:scale-102 hover:bg-slate-600 hover:text-white sm:ml-3 sm:w-auto",
+      },    
+      width:"70%",
+  
+      });
+  }
+
   </script>
 </html>
